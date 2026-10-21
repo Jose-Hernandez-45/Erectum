@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== COLORES ===== */
+:root {
+    --color-r: #000000;
+    --color-e1: #ffea00;
+    --color-e: #004cff;
+    --color-j: #9b00f4;
+}
+
+/* ===== CUERPO ===== */
+body {
+    background-color: var(--color-r);
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    min-height: 100vh;
+}
+
+/* ===== ENCABEZADO ===== */
+.header {
+    width: 100%;
+    padding: 30px 8%;
+    border-bottom: 2px solid var(--color-j);
+}
+
+/* ===== NAVEGACIÓN ===== */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--color-e);
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar img {
+    width: 15%;
+}
+
+/* Enlace principal */
+.navbar .logo {
+    color: var(--color-e1);
+    font-family: "Gloria Hallelujah", cursive;
+    font-size: 30px;
+}
+
+/* Efecto al pasar el cursor */
+.navbar a:hover {
+    color: var(--color-j);
+    transform: rotate(-2deg) scale(1.05);
+}
+
+/* ===== BANNER ===== */
+.banner {
+    position: relative;
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== CONTENIDO DEL BANNER ===== */
+.banner-content {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* ===== TEXTO NEW RELEASE ===== */
+.new-release {
+    color: var(--color-e1);
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(20px, 3.5vw, 42px);
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-align: center;
+    text-transform: uppercase;
+
+    text-shadow:
+        3px 3px 0 #000,
+        -2px -2px 0 #000;
+
+    transform: rotate(-3deg);
+}
+
+/* ===== BOTÓN ESCUCHAR ===== */
+.btn-escuchar {
+    display: inline-block;
+    padding: 16px 35px;
+
+    background-color: var(--color-e1);
+    color: #000;
+
+    font-family: "Archivo Black", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0 var(--color-e);
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease,
+                transform 0.2s ease;
+}
+
+/* Efecto al pasar el cursor */
+.btn-escuchar:hover {
+    background-color: var(--color-e);
+    color: #fff;
+    box-shadow: 6px 6px 0 var(--color-e1);
+    transform: rotate(-3deg) scale(1.05);
+}
+
+/* ===== CONTENIDO ===== */
+main {
+    min-height: 75vh;
+}
+
+/* ===== SECCIÓN MERCH ===== */
+.merch-section {
+    padding: 80px 8%;
+    background-color: var(--color-r);
+    color: white;
+    text-align: center;
+    border-top: 2px solid var(--color-j);
+    background-image: url("../assets/img/EyR_verde.jpeg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Título principal */
+.merch-title {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(42px, 7vw, 80px);
+    color: var(--color-e1);
+    text-shadow: 4px 4px 0 var(--color-j);
+    transform: rotate(-2deg);
+}
+
+.merch-subtitle {
+    margin: 15px 0 45px;
+    color: var(--color-e);
+    font-family: "Archivo Black", sans-serif;
+    letter-spacing: 6px;
+}
+
+/* Tarjeta del producto */
+.merch-container {
+    display: flex;
+    justify-content: center;
+}
+
+.merch-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 40px;
+
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px;
+
+    background: #111;
+    border: 1px solid #333;
+    box-shadow: 8px 8px 0 var(--color-e);
+    text-align: left;
+}
+
+/* Imagen de la playera */
+.merch-image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 350px;
+    background:
+        radial-gradient(ellipse, #292929 0%, #111 70%);
+
+    overflow: hidden;
+}
+
+.merch-image-container img {
+    display: block;
+    width: 100%;
+    max-height: 430px;
+    object-fit: contain;
+
+    transition: opacity 0.2s ease;
+}
+
+/* Etiqueta NEW DROP */
+.merch-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+
+    padding: 8px 12px;
+    background: var(--color-e1);
+    color: #000;
+
+    font-family: "Archivo Black", sans-serif;
+    font-size: 12px;
+    transform: rotate(-4deg);
+}
+
+/* Indicador de vista */
+.vista-label {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    padding: 8px 15px;
+    background: var(--color-j);
+    color: white;
+
+    font-family: "Archivo Black", sans-serif;
+    font-size: 12px;
+}
+
+/* Información del producto */
+.merch-info {
+    padding: 15px;
+}
+
+.merch-category {
+    color: var(--color-j);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.merch-info h3 {
+    color: var(--color-e);
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(24px, 3vw, 38px);
+    margin-bottom: 20px;
+}
+
+.merch-description {
+    color: #bbb;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.merch-price {
+    color: var(--color-e1);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+/* Botón cambiar vista */
+.btn-cambiar {
+    width: 100%;
+    padding: 14px 12px;
+    margin-bottom: 15px;
+
+    background: transparent;
+    color: var(--color-e1);
+
+    border: 2px solid var(--color-e);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-cambiar:hover {
+    background: var(--color-e);
+    color: white;
+    box-shadow: 4px 4px 0 var(--color-j);
+}
+
+/* Botón comprar */
+.btn-comprar {
+    display: block;
+    width: 100%;
+    padding: 15px;
+
+    background: var(--color-e1);
+    color: #000;
+
+    border: 2px solid var(--color-e1);
+    font-family: "Archivo Black", sans-serif;
+    text-decoration: none;
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background: var(--color-j);
+    color: white;
+    border-color: var(--color-j);
+}
+
+/* ===== PIE DE PÁGINA ===== */
+.footer {
+    padding: 25px;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+    border-top: 1px solid #222;
+}
+
+/* ===== DISEÑO PARA CELULARES ===== */
+@media (max-width: 600px) {
+    .header {
+        padding: 25px 5px 15px 5px;
+    }
+
+    .navbar {
+        gap: 20px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .navbar .logo {
+        font-size: 16px;
+    }
+
+    .banner-content {
+        top: 85%;
+        gap: 10px;
+    }
+    .banner img{
+        width: 200%;
+        max-width: none;
+        height: auto;
+        margin-left: -50%;
+    }
+
+    .new-release {
+        font-size: clamp(14px, 4vw, 22px);
+        letter-spacing: 3px;
+    }
+
+    .btn-escuchar {
+        padding: 10px 18px;
+        font-size: 14px;
+        border-width: 2px;
+        box-shadow: 4px 4px 0 var(--color-e);
+    }
+
+    .btn-escuchar:hover {
+        box-shadow: 4px 4px 0 var(--color-e1);
+    }
+    .merch-section {
+        padding: 55px 6%;
+    }
+
+    .merch-subtitle {
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+    }
+
+    .merch-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .merch-image-container {
+        min-height: 280px;
+    }
+
+    .merch-image-container img {
+        max-height: 350px;
+    }
+
+    .merch-info {
+        padding: 15px 5px;
+    }
+}
